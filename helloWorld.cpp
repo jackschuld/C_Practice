@@ -27,15 +27,15 @@ public:
             std::cout << "Name is " << name << ". Is that correct? [y/n]: ";
             std::cin >> response;
             if (response.length() == 1 && (response[0] == 'y' || response[0] == 'Y')) {
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
                 return true;
             } else if (response.length() == 1 && (response[0] == 'n' || response[0] == 'N')) {
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
                 return false;
             } else {
                 std::cout << "Invalid input. Please enter 'y' or 'n'.\n";
                 std::cin.clear(); // Clear error flags
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
             }
         }
     }

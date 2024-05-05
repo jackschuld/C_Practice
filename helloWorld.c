@@ -19,7 +19,8 @@ void getName(User *user) {
 
 // Function to confirm the user's name
 bool confirmName(User *user) {
-    char response[3]; // Allocate space for two characters and null terminator
+    // Allocate space for two characters
+    char response[3]; // This way we can see the response is only y or n without additional letters
     while (1) {
         printf("Name is %s. Is that correct? [y/n]: ", user->name);
         scanf(" %2s", response); // Read up to two characters
