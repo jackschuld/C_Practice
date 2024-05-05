@@ -5,6 +5,10 @@ typedef struct {
     char name[25];
 } User;
 
+typedef struct {
+    int answer;
+} Game;
+
 void getName(User *user) {
     printf("Hello! What's your name? ");
     scanf(" %[^\n]", user->name);
@@ -24,12 +28,19 @@ bool isConfirmed(User *user) {
     }
 }
 
+void runIntro(User *user) {
+    sayHello();
+    do {
+        getName(user);
+    } while (!confirmName(user)); // Repeat until the name is confirmed
+    printf("Welcome, %s!\n", user->name);
+}
 
 int main() {
     User user;
-    do {
-        getName(&user);
-    } while (!isConfirmed(&user));
-    printf("Hello %s!", user.name);
-}
+    Game game;
 
+    runIntro(&user);
+
+    return 0;
+}
